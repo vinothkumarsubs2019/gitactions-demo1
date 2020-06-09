@@ -35,4 +35,4 @@ jobs:
     - name: Execute Build Validation
       run: |
         cc test.c
-        echo $github
+        echo ${github.event}
