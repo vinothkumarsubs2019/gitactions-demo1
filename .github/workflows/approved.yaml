@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: Deploy
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
@@ -33,16 +33,3 @@ jobs:
       run: |
         cc test.c
         ./a.out
-    - name: Commit Comment
-      uses: peter-evans/commit-comment@v1.2.1
-      with:
-        # The GitHub authentication token
-        token: # default is ${{ github.token }}
-        # The commit SHA. Defaults to the current commit.
-        sha: # optional
-        # The contents of the comment.
-        body: 
-        # Relative path of the file to comment on.
-        path: # optional
-        # Line index in the diff to comment on.
-        position: # optional
