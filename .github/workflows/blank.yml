@@ -36,8 +36,3 @@ jobs:
       run: |
         cc test.c
         echo $github
-    - name: Add reaction
-      uses: peter-evans/create-or-update-comment@v1
-      with:
-        comment-id: ${{ github.event.comment.id }}
-        reactions: eyes
