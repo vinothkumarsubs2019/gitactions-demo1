@@ -35,17 +35,9 @@ jobs:
     - name: Execute Build Validation
       run: |
         cc test.c
-
-    - name: Commit Comment
-      uses: peter-evans/commit-comment@v1.2.1
+        echo $github
+    - name: Add reaction
+      uses: peter-evans/create-or-update-comment@v1
       with:
-        # The GitHub authentication token
-        token: # default is ${{ github.token }}
-        # The commit SHA. Defaults to the current commit.
-        sha: # optional
-        # The contents of the comment.
-        body: 
-        # Relative path of the file to comment on.
-        path: # optional
-        # Line index in the diff to comment on.
-        position: # optional
+        comment-id: ${{ github.event.comment.id }}
+        reactions: eyes
